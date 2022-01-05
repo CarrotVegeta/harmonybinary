@@ -2,12 +2,12 @@ package test
 
 import (
 	"fmt"
-	"harmonybinary/hap"
+	"harmonybinary/app"
 	"testing"
 )
 
-func TestHap(t *testing.T) {
-	a, err := hap.OpenFile("./c.hap")
+func TestApp(t *testing.T) {
+	a, err := app.OpenFile("./123.app")
 	if err != nil {
 		fmt.Println(err)
 	}

@@ -1,6 +1,6 @@
 package pkg
 
 const (
-	FileTypeHap = "hap"
-	FileTypeApk = "apk"
+	FileTypeHap = ".hap"
+	FileTypeApk = ".apk"
 )

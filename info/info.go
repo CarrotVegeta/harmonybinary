@@ -16,7 +16,7 @@ type App struct {
 	Perms        []string `json:"perms"`
 }
 
-func GetAppInfo(apkFilePath string) (a *App, err error) {
+func GetAppInfo(apkFilePath string) (*App, error) {
 	p, err := apk.OpenFile(apkFilePath)
 	if err != nil {
 		return nil, errors.New(fmt.Sprintf("打开apk(%s)出错:%s", apkFilePath, err.Error()))
@@ -35,7 +35,7 @@ func GetAppInfo(apkFilePath string) (a *App, err error) {
 			appLabel = ""
 		}
 	}
-	a.Name = appLabel
+	a := &App{Name: appLabel}
 	s, err := p.Manifest().VersionName.String()
 	if err == nil {
 		a.Version = s
@@ -55,5 +55,5 @@ func GetAppInfo(apkFilePath string) (a *App, err error) {
 			a.Perms = append(a.Perms, s2)
 		}
 	}
-	return
+	return a, nil
 }

@@ -11,8 +11,7 @@ import (
 var fileTypeMap sync.Map
 
 func init() {
-	fileTypeMap.Store("00736861706500636f6c", "apk")  //apk (APK)
-	fileTypeMap.Store("504b03040a0000080000", "hap")  //hap (HAP)
+	fileTypeMap.Store("504b03040a0000080000", "apk")  //apk (APK)
 	fileTypeMap.Store("ffd8ffe000104a464946", "jpg")  //JPEG (jpg)
 	fileTypeMap.Store("89504e470d0a1a0a0000", "png")  //PNG (png)
 	fileTypeMap.Store("47494638396126026f01", "gif")  //GIF (gif)

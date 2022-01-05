@@ -5,8 +5,8 @@ import (
 	"harmonybinary/info"
 	"harmonybinary/pkg"
 	"harmonybinary/utils"
-	"io/ioutil"
 	"os"
+	"path"
 )
 
 func OpenFile(filepath string) (*info.App, error) {
@@ -29,9 +29,8 @@ func getHapFile(dir string) (filePath string, err error) {
 		return "", err
 	}
 	for _, f := range files {
-		fs, _ := ioutil.ReadFile(f)
-		fileType := utils.GetFileType(fs)
-		if fileType == pkg.FileTypeHap {
+		ext := path.Ext(f)
+		if ext == pkg.FileTypeHap {
 			return f, nil
 		}
 	}

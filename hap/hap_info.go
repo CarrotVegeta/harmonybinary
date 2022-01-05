@@ -4,8 +4,8 @@ import (
 	"harmonybinary/info"
 	"harmonybinary/pkg"
 	"harmonybinary/utils"
-	"io/ioutil"
 	"os"
+	"path"
 )
 
 func OpenFile(filepath string) (*info.App, error) {
@@ -20,6 +20,9 @@ func OpenFile(filepath string) (*info.App, error) {
 		return nil, err
 	}
 	a, err := info.GetAppInfo(apkFilePath)
+	if err != nil {
+		return nil, err
+	}
 	return a, nil
 }
 func getApkFile(dir string) (filePath string, err error) {
@@ -28,10 +31,9 @@ func getApkFile(dir string) (filePath string, err error) {
 		return "", err
 	}
 	for _, f := range files {
-		f, _ := ioutil.ReadFile(f)
-		fileType := utils.GetFileType(f)
-		if fileType == pkg.FileTypeApk {
-			return fileType, nil
+		ext := path.Ext(f)
+		if ext == pkg.FileTypeApk {
+			return f, nil
 		}
 	}
 	return
