@@ -1,9 +1,9 @@
 package hap
 
 import (
-	"harmonybinary/info"
-	"harmonybinary/pkg"
-	"harmonybinary/utils"
+	"github.com/CarrotVegeta/harmonybinary/info"
+	"github.com/CarrotVegeta/harmonybinary/pkg"
+	"github.com/CarrotVegeta/harmonybinary/utils"
 	"os"
 	"path"
 )
