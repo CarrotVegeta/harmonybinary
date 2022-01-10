@@ -2,7 +2,7 @@ package test
 
 import (
 	"fmt"
-	"harmonybinary/hap"
+	"github.com/CarrotVegeta/harmonybinary/hap"
 	"testing"
 )
 
