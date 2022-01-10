@@ -2,7 +2,7 @@ package test
 
 import (
 	"fmt"
-	"harmonybinary/app"
+	"github.com/CarrotVegeta/harmonybinary/app"
 	"testing"
 )
 
